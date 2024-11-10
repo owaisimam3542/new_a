@@ -14,16 +14,16 @@ def parse_xml(xml_file):
         voucher_data['Transaction Type'] = 'Parent'  # Adjust as needed for Parent/Child/Other logic
         voucher_data['Vch No.'] = voucher.find('VOUCHERNUMBER').text if voucher.find(
             'VOUCHERNUMBER') is not None else 'NA'
-        voucher_data['Ref No.'] = 'NA'  # Adjust as needed
-        voucher_data['Ref Type'] = 'NA'  # Adjust as needed
-        voucher_data['Ref Date'] = 'NA'  # Adjust as needed
+        voucher_data['Ref No.'] = 'NA' 
+        voucher_data['Ref Type'] = 'NA'  
+        voucher_data['Ref Date'] = 'NA'  
         voucher_data['Debtor'] = voucher.find('PARTYLEDGERNAME').text if voucher.find(
             'PARTYLEDGERNAME') is not None else 'NA'
-        voucher_data['Ref Amount'] = 'NA'  # Adjust if necessary
+        voucher_data['Ref Amount'] = 'NA' 
         voucher_data['Amount'] = voucher.find('AMOUNT').text if voucher.find('AMOUNT') is not None else 'NA'
         voucher_data['Particulars'] = voucher.find('NARRATION').text if voucher.find('NARRATION') is not None else 'NA'
         voucher_data['Vch Type'] = voucher.find('VCHTYPE').text if voucher.find('VCHTYPE') is not None else 'NA'
-        voucher_data['Amount Verified'] = 'Yes'  # Adjust logic to verify if the amounts match
+        voucher_data['Amount Verified'] = 'Yes'  
 
         # Debugging: print to check each voucher data
         print(voucher_data)
